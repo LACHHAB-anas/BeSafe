@@ -462,11 +462,13 @@ public class DetectorActivity extends CameraActivity implements OnImageAvailable
             label = result.getTitle();
             if (result.getId().equals("0")) {
               color = Color.GREEN;
+              ToneGenerator toneG = new ToneGenerator(AudioManager.STREAM_ALARM, 100);
+              toneG.startTone(ToneGenerator.TONE_CDMA_PIP, 150);
             }
             else {
               color = Color.RED;
               ToneGenerator toneG = new ToneGenerator(AudioManager.STREAM_ALARM, 100);
-              toneG.startTone(ToneGenerator.TONE_CDMA_ALERT_CALL_GUARD, 200);
+              toneG.startTone(ToneGenerator.TONE_CDMA_ALERT_CALL_GUARD, 300);
             }
           } else {
             ToneGenerator toneG = new ToneGenerator(AudioManager.STREAM_ALARM, 100);
